@@ -17,7 +17,7 @@ class DishDetail extends Component {
 
     renderComments(dish) {
         console.log("renderComments method is envoked");
-        console.log(dish.id);
+        console.log("this is the dish id: " + dish.id);
         console.log(dish.comments != null);
         if (dish.comments != null) {
             return (     
@@ -27,7 +27,7 @@ class DishDetail extends Component {
                             <Media tag="li">
                                 <Media body>
                                     <p>{comment.comment}<br/>
-                                    {"-- " + comment.author + ", " + comment.date}</p>
+                                    {"-- " + comment.author + ", " + new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
                                 </Media>
                             </Media>
                         </div>
@@ -42,7 +42,8 @@ class DishDetail extends Component {
     }
 
     renderDish(dish) {
-        console.log("renderDish methode is envoked");
+        console.log("renderDish method is envoked");
+        console.log(dish);
 
 
         if (dish != null) {
@@ -70,7 +71,9 @@ class DishDetail extends Component {
 
     render() {
         return(
-            this.renderDish(this.props.selectedDish)
+            <div className="container">
+                {this.renderDish(this.props.dish)}
+            </div>
         )
 
     }
