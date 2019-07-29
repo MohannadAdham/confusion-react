@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { tsConstructorType } from '@babel/types';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from  'reactstrap';
+// import { tsConstructorType } from '@babel/types';
+import { Card, CardImg, CardImgOverlay, CardTitle } from  'reactstrap';
 
 class Menu extends Component {
 

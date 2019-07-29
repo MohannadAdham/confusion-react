@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from  'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from  'reactstrap';
 import { Media } from 'reactstrap'
 
 
@@ -14,11 +14,17 @@ class DishDetail extends Component {
         console.log("DishDetail Constructor is envoked");
     }
 
+    componentDidMount() {
+        console.log('Dishdetail Component componentDidMount is invoked');
+    }
+
+    componentDidUpdate() {
+        console.log('Dishdetail Component componentDidUpdate is invoked');
+    }
+
 
     renderComments(dish) {
-        console.log("renderComments method is envoked");
-        console.log("this is the dish id: " + dish.id);
-        console.log(dish.comments != null);
+
         if (dish.comments != null) {
             return (     
                 dish.comments.map((comment) => {
@@ -42,10 +48,6 @@ class DishDetail extends Component {
     }
 
     renderDish(dish) {
-        console.log("renderDish method is envoked");
-        console.log(dish);
-
-
         if (dish != null) {
             return(
                 <div className="row">
@@ -70,6 +72,9 @@ class DishDetail extends Component {
     }
 
     render() {
+
+        console.log("Dishdetail Component render method is invoked.");
+
         return(
             <div className="container">
                 {this.renderDish(this.props.dish)}
