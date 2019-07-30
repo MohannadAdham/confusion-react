@@ -21,7 +21,6 @@ class Main extends Component {
     }
 
   render() {
-    console.log("MainComponent render method is invoked")
     return (
       <div>
         <Navbar dark color="primary">
