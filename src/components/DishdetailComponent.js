@@ -23,7 +23,7 @@ import { Media } from 'reactstrap'
             );
         } else {
             return (
-                <div>There are no comments</div>
+                <div></div>
             );
         }
     }
