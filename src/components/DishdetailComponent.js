@@ -1,14 +1,16 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from  'reactstrap';
-import { Media } from 'reactstrap'
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Media } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 
-    function RenderComments({dish}) {
+    function RenderComments({comments}) {
 
-        if (dish != null) {
+        if (comments != null) {
             return (     
-                dish.comments.map((comment) => {
+                comments.map((comment) => {
                     return (
                         <div key={comment.id} className="col-12">
                             <Media tag="li">
@@ -54,11 +56,19 @@ import { Media } from 'reactstrap'
         return(
             <div className="container">
                 <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>{props.dish.name}</h3>
+                    </div>
+                </div>
+                <div className="row">
                     <RenderDish dish={props.dish} />
-
                     <div className="col-12 col-md-5 m-1">
                         <h4>Comments</h4>
-                        <RenderComments dish={props.dish} />
+                        <RenderComments comments={props.comments} />
                     </div> 
                 </div>
                
