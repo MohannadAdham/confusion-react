@@ -42,7 +42,6 @@ import { Link } from 'react-router-dom';
                             </CardBody>
                         </Card>
                     </div>
-
             );
         } else {
             return(<div></div>)
