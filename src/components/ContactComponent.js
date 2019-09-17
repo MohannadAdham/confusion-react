@@ -135,7 +135,7 @@ class Contact extends Component {
                             <FormGroup row>
                                 <Label htmlFor="message" md={2}>Your Feedback</Label>
                                 <Col md={10}>
-                                    <Input type="textarea" id="feedback" name="message"
+                                    <Input type="textarea" id="message" name="message"
                                     rows="12" value={this.state.message} 
                                     onChange={this.handleInputChange}/>
                                 </Col>
