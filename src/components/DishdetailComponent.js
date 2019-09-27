@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from  'reactstrap';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentForm';
 
 
 
@@ -68,9 +69,9 @@ import { Link } from 'react-router-dom';
                     <div className="col-12 col-md-5 m-1">
                         <h4>Comments</h4>
                         <RenderComments comments={props.comments} />
+                        <CommentForm/>
                     </div> 
-                </div>
-               
+                </div>               
             </div>
         )
 
